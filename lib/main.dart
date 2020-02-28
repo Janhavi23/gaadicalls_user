@@ -1,53 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'settings.dart';
 
-void main() => runApp(App());
+void main() => runApp(new MyApp());
 
-class App extends StatefulWidget {
-  @override
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-
-  String _locationMessage = "";
-
-  void _getCurrentLocation() async {
-
-    final position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    print(position);
-
-    setState(() {
-      _locationMessage = "${position.latitude}, ${position.longitude}";
-    });
-
-  }
-
-
-  // This widget is the root of your application.
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        home: Scaffold(
-            appBar: AppBar(
-                title: Text("Location Services")
-            ),
-            body: Align(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(_locationMessage),
-                    FlatButton(
-                        onPressed: () {
-                          _getCurrentLocation();
-                        },
-                        color: Colors.green,
-                        child: Text("Find Location")
-                    )
-                  ]),
-            )
-        )
+    return new MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "GoGetters App",
+      theme: new ThemeData(primarySwatch: Colors.blue),
+      home: new Settings(),
     );
   }
 }
+
