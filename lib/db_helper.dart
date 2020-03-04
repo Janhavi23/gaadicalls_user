@@ -12,7 +12,7 @@ class DBhelper{
   static const String ID = 'id';
   static const String Name = 'vname';
   static const String TABLE = 'Vendordata';
-  static const String DB_name = 'Vendordb4';
+  static const String DB_name = 'Vendordb5';
 
 
 Future<Database> get db async{
@@ -39,6 +39,7 @@ _onCreate(Database db,int version)
 Future<Vendor> save(Vendor v) async{
   var dbClient = await db;
   v.id = await dbClient.insert(TABLE,v.toMap());
+ // v.vname = dbClient.insert(TABLE, v.toMap()).toString();
   return v;
 }
 

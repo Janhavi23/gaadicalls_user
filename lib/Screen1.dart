@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutterapp/settings.dart';
 import 'package:flutterapp/vendor_details.dart';
 
+import 'List.dart';
 import 'db_helper.dart';
 
 
@@ -24,7 +25,6 @@ class _Screen1State extends State<Screen1> {
 
   _Screen1State() {
     dbhelper = DBhelper();
-    
     isUpdating = false;
   }
 
@@ -54,28 +54,28 @@ class _Screen1State extends State<Screen1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextFormField(
-              controller: controller,
-              style: TextStyle(fontSize: 20),
-              validator: (val) =>
-                  val.length == 0 ? 'Enter name of vendor' : null,
-              onSaved: (val) => name = val,
+            Container(
+              width: 400,
+              height: 50,
+              color: Colors.transparent,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Vendor Name'
+                ),
+                controller: controller,
+                style: TextStyle(fontSize: 20),
+                validator: (val) =>
+                    val.length == 0 ? 'Enter name of vendor' : null,
+                onSaved: (val) => name = val,
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                FlatButton(
-                  onPressed: add,
-                  child: Text('ADD'),
-                )
                 
               ],
             )
-          ],
+          
         ),
-      ),
-    );
+      );
+    
   }
 
   data(List<Vendor> vendors) {
@@ -84,7 +84,6 @@ class _Screen1State extends State<Screen1> {
       ListTile(
                 title: Row(
                   children: <Widget>[
-                    // Text(vendor.id.toString()),
                    Text(vendor.vname)
                   ],
                 ),
@@ -128,17 +127,16 @@ class _Screen1State extends State<Screen1> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             form(),
-            list()
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            /*
+          add();
         Navigator.push(context,
-        MaterialPageRoute(builder: (context) => Registration()));*/
+        MaterialPageRoute(builder: (context) => Lists()));
           },
           label: Text(
-            'Register',
+            'ADD',
             style: TextStyle(fontSize: 15),
           ),
         ));

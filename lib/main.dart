@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Screen1.dart';
-import 'settings.dart';
+import 'package:flutterapp/List.dart';
+
+
 
 void main() => runApp(new MyApp());
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "GoGetters App",
       theme: new ThemeData(primarySwatch: Colors.blue),
-      home: new Screen1(),
+      home: new Lists()
     );
   }
 }
