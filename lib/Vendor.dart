@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/api_notify.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -33,7 +34,7 @@ class _GetTimestampState extends State<GetTimestamp> {
           children: <Widget>[
             RaisedButton(
               onPressed:(){
-                //api_notify();
+                api_notify();
               },
               child: Text('Start',
               style:TextStyle(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/List.dart';
+import 'package:flutterapp/Vendor.dart';
+import 'package:flutterapp/vendor_details.dart';
 
 class Options extends StatelessWidget {
   @override
@@ -29,8 +31,8 @@ class Options extends StatelessWidget {
             ),
             RaisedButton(
             onPressed:(){
-               /*Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ()), );*/
+               Navigator.push(context,
+                    MaterialPageRoute(builder: (context) =>GetTimestamp() ));
             },
             child: Text('Vendor',
             style: TextStyle(
