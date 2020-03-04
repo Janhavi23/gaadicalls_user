@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/List.dart';
+import 'package:flutterapp/options.dart';
 
 
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "GoGetters App",
       theme: new ThemeData(primarySwatch: Colors.blue),
-      home: new Lists()
+      home: new Options()
     );
   }
 }

@@ -39,7 +39,6 @@ _onCreate(Database db,int version)
 Future<Vendor> save(Vendor v) async{
   var dbClient = await db;
   v.id = await dbClient.insert(TABLE,v.toMap());
- // v.vname = dbClient.insert(TABLE, v.toMap()).toString();
   return v;
 }
 
